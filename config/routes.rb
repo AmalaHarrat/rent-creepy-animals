@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :animals do
-    resources :bookings, only: [:index, :new, :create, :edit, :update] do
-    end
+    resources :bookings, only: %i[index new create edit update]
   end
   resources :bookings, only: [:destroy]
   # Defines the root path route ("/")
