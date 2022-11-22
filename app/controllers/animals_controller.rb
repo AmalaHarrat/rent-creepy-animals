@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal, only: %i[edit]
+
   def index
   end
 
@@ -19,4 +21,11 @@ class AnimalsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def set_animal
+    @animal = Animal.find(params[:id])
+  end
+
 end
