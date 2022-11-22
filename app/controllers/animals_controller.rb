@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal, only: %i[edit destroy]
+
   def index
    @animals = Animal.all
   end
@@ -24,10 +26,19 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
+    @animal.destroy
+    redirect_to animals_path, status: :see_other
   end
+
+  private
 
   def animal_params
     params.require(:animal).permit(:name, :category, :description, :fear, :price)
+  end
+
+
+  def set_animal
+    @animal = Animal.find(params[:id])
   end
 
 end
