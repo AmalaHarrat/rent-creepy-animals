@@ -1,2 +1,11 @@
-<h1>Animals#edit</h1>
-<p>Find me in app/views/animals/edit.html.erb</p>
+<h1 class="text-center my-5 mx-3">Edit <%= @animal.name %></h1>
+
+<%= render "form", animal: @animal %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="text-end"><%= link_to "Back", animal_path(@animal.id), class: "btn btn-ghost" %></p>
+    </div>
+  </div>
+</div>
