@@ -1,2 +1,10 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1 class = "mt-5 text-center">My bookings</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%@bookings.each do |booking|%>
+        <p><%= booking.booking_date%></p>
+        <% end %>
+    </div>
+  </div>
+</div>
