@@ -1,6 +1,5 @@
 class Animal < ApplicationRecord
-  has_many :bookings
-  has_many :users
+  has_many :bookings, dependent: :destroy
 
-  belongs_to :user, through: :bookings
+  belongs_to :user
 end
