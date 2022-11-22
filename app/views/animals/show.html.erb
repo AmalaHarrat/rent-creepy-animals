@@ -1,6 +1,21 @@
-<h1>Animals#show</h1>
-<h2><%= @animal.name %></h2>
-<p><%= @animal.category %></p>
-<p><%= @animal.description %></p>
-<p><%= @animal.fear %></p>
-<p><%= @animal.price %></p> 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Animals#show</h1>
+        <div class="card-animal mb-4">
+          <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" width = 300 />
+          <div class="card-animal-infos">
+            <div>
+              <h2><%= @animal.name%></h2>
+              <p><%= @animal.category %> | fearness level <%= @animal.fear %></p>
+            </div>
+            <h2 class="card-animal-pricing"><%= @animal.price %>€</h2>
+          </div>
+        </div>
+    </div>
+  </div>
+  <p><%= @animal.description %></p>
+<%= link_to "Book now", "#", class: "btn btn-primary" %>
+</div>

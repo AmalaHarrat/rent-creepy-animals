@@ -31,9 +31,8 @@
   position: relative;
 }
 
-// .card-trip-infos .card-animal-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
+.cards-animal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
