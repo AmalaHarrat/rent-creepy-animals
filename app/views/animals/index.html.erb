@@ -20,6 +20,7 @@
             <h2 class="card-animal-pricing"><%= animal.price %>€</h2>
           </div>
         </div>
-      <% end %> 
+      <% end %>
   </div>
+      <%= link_to "Add a new animal", new_animal_path(@animal), class: "btn btn-primary" %>
 </div>
