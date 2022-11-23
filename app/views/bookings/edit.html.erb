@@ -1,2 +1,13 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1 class= "my-5 mx-3 text-center"> Edit your reservation</h1>
+<div class="container">
+  <div class= "row">
+    <div class="col">
+    <%= simple_form_for [@animal,@booking] do |f| %>
+      <%= f.input :booking_date, html5: true %>
+      <%= f.submit "Update my reservation", class: "btn btn-ghost" %>
+    <% end %>
+    <br>
+    <%= link_to " ⏎ Back to my reservation list", animal_bookings_path(@booking), class: "btn btn-ghost" %>
+    </div>
+  </div>
+</div>
