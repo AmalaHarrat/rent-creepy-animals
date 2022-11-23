@@ -2,9 +2,23 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <%@bookings.each do |booking|%>
-        <p><%= booking.booking_date%></p>
-        <% end %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <%@bookings.each do |booking|%>
+            <h2><%= booking.animal.name %></h2>
+            <p> <u>Reservation date:</u> <%= booking.booking_date%></p>
+            <div class="col">
+              <%= link_to edit_animal_booking_path(booking,booking.animal_id) do %>
+                <i class="fa-solid fa-pen"></i>
+              <% end %>
+              <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "You are about to delete this movie from your list, Are you sure?"} do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
