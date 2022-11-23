@@ -23,9 +23,14 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
+    @animal = Animal.find(params[:animal_id])
   end
 
   def update
+    @booking = Booking.find(params[:animal_id])
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
