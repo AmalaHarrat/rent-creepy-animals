@@ -38,6 +38,7 @@ class AnimalsController < ApplicationController
     params.require(:animal).permit(:name, :category, :description, :fear, :price)
   end
 
+
   def set_animal
     @animal = Animal.find(params[:id])
   end
