@@ -2,7 +2,7 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[edit update destroy]
 
   def index
-   @animals = Animal.all
+    @animals = Animal.all
   end
 
   def show
@@ -38,8 +38,8 @@ class AnimalsController < ApplicationController
     params.require(:animal).permit(:name, :category, :description, :fear, :price)
   end
 
+
   def set_animal
     @animal = Animal.find(params[:id])
   end
-
 end
