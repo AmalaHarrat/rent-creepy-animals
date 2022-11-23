@@ -1,26 +1,25 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(<%=image_path('saut.jpg')%>);">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1 class="text-center"> Welcome ! </h1>
+    <p class="text-center"> Find your perfect animal for any reason you may have... even weird ones...</p>
   </div>
 </div>
 
 <div class="container">
-  <h1 class="text-center">Animal#index</h1>
   <div class="cards-animal">
       <% @animals.each do |animal| %>
+      <div class="zoom">
         <div class="card-animal mb-3">
-          <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" width = 300 />
+          <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
           <div class="card-animal-infos">
             <div>
               <h2><%= link_to animal.name, animal_path(animal)%></h2>
-              <p><%= animal.category %> | fearness level <%= animal.fear %></p>
+              <p><%= animal.category %> | fearness level: <%= animal.fear %></p>
             </div>
-            <h2 class="card-animal-pricing"><%= animal.price %>€</h2>
+            <h2 class="card-animal-pricing"><%= animal.price %> $</h2>
           </div>
         </div>
+      </div>
       <% end %>
   </div>
-      <%= link_to "Add a new animal", new_animal_path(@animal), class: "btn btn-ghost"  %>
 </div>

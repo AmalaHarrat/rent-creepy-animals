@@ -8,6 +8,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .card-animal h2 {
@@ -22,7 +23,6 @@
   margin: 0;
 }
 
-
 .card-animal .card-animal-infos {
   padding: 16px;
   display: flex;
@@ -31,11 +31,23 @@
   position: relative;
 }
 
+.card-animal-infos a {
+  text-decoration: none;
+  color: #564C4D;
+}
+
+
 .cards-animal {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  }
 
 // CARDS PRODUCT
 
@@ -71,4 +83,13 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-product .card-product-infos a {
+  text-decoration: none;
+  color: #564C4D;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
 }
