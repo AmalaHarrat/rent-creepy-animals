@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: %i[edit destroy]
+  before_action :set_animal, only: %i[edit update destroy]
 
   def index
    @animals = Animal.all
@@ -23,6 +23,8 @@ class AnimalsController < ApplicationController
   end
 
   def update
+    @animal.update(animal_params)
+    redirect_to animal_path(@animal)
   end
 
   def destroy
