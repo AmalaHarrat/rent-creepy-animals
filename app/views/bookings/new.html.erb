@@ -1,13 +1,13 @@
 <h1 class= "my-5 mx-3 text-center"> Make a reservation for <b><%= @animal.name %></b></h1>
 <div class="container">
   <div class= "row">
-    <div class="col">
+    <div class="col-8 ">
     <%= simple_form_for [@animal,@booking] do |f| %>
       <%= f.input :booking_date, html5: true %>
       <%= f.submit "Confirm my reservation", class: "btn btn-ghost" %>
     <% end %>
     <br>
-    <%= link_to " ⏎ Back to my reservation list", animal_bookings_path(@animal), class: "btn btn-ghost" %>
+    <%= link_to " → My reservation list", animal_bookings_path(@animal) %>
     </div>
   </div>
 </div>
