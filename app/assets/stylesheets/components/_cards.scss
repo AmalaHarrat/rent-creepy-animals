@@ -83,3 +83,12 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card-product .card-product-infos a {
+  text-decoration: none;
+  color: #564C4D;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
+}

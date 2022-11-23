@@ -1,14 +1,13 @@
-<h1 class = "mt-5 text-center">My bookings</h1>
+<h1 class = "m-5 text-center">My bookings</h1>
 <div class="container">
   <div class="row">
-    <div class="col">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%@bookings.each do |booking|%>
+    <div class="col-6">
+        <div class="card-product">
+        <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
         <div class="card-product-infos">
-          <%@bookings.each do |booking|%>
             <h2><%= booking.animal.name %></h2>
-            <p> <u>Reservation date:</u> <%= booking.booking_date%></p>
-            <div class="col">
+            <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>
               <%= link_to edit_animal_booking_path(booking,booking.animal_id) do %>
                 <i class="fa-solid fa-pen"></i>
               <% end %>
@@ -16,9 +15,8 @@
                 <i class="fa-solid fa-trash"></i>
               <% end %>
             </div>
-          <% end %>
-        </div>
-      </div>
+          </div>
     </div>
+          <% end %>
   </div>
 </div>
