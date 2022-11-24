@@ -8,7 +8,7 @@
         <div class="card-product-infos">
             <h2><%= booking.animal.name %></h2>
             <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>
-              <%= link_to edit_animal_booking_path(booking.animal_id, booking) do %>
+              <%= link_to edit_booking_path(booking) do %>
                 <i class="fa-solid fa-pen"></i>
               <% end %>
               <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "You are about to delete this movie from your list, Are you sure?"} do %>
