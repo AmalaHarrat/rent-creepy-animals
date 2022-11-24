@@ -15,8 +15,12 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    @animal.save
-    redirect_to animals_path(@animal)
+    @animal.user = current_user
+    if @animal.save
+      redirect_to my_animals_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -25,16 +29,18 @@ class AnimalsController < ApplicationController
   def update
     @animal = Animal.find(params[:id])
     @animal.update(animal_params)
-    redirect_to animal_path(@animal)
+    redirect_to my_animals_path
   end
 
   def destroy
     @animal.destroy
-    redirect_to animals_path, status: :see_other
+    redirect_to my_animals_path, status: :see_other
   end
 
   def my_animals
-    # index, affiche tout ces animaux
+    # index
+    # indes des annimaux de mon user crée
+    @myanimals = current_user.animals
   end
 
   private

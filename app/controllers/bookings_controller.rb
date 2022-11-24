@@ -49,7 +49,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-
   private
 
   def booking_params
