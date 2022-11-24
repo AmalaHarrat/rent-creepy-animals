@@ -8,8 +8,8 @@
           <div class="photos">
             <%= cl_image_tag @animal.photo.key, height: 300, width: 400 %>
           </div>
-          <% else
-          %>
+          <% else%>
+           <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
           <% end %>
         </div>
       <div class="d-flex justify-content-between">
