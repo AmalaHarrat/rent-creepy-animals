@@ -46,7 +46,11 @@ class BookingsController < ApplicationController
 
   def my_bookings
     # index
-    @bookings = Booking.all
+    @mybookings = current_user.bookings
+  end
+
+  def booking_validation
+
   end
 
   private

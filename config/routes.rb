@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   get "my_animals", to: "animals#my_animals"
   get "my_bookings", to: "bookings#my_bookings"
   # patch "animals", to: "animals#my_update"
-
 end
