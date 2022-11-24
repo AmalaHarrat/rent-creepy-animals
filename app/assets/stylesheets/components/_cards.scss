@@ -57,6 +57,15 @@
   grid-gap: 16px;
 }
 
+a {
+  text-decoration: none;
+  color: #564C4D;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
+}
+
 .zoom:hover {
   transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   transition: 0.3s;
