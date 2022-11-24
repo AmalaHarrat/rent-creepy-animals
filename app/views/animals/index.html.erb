@@ -11,7 +11,11 @@
         <%= link_to animal_path(animal) do %>
           <div class="zoom">
             <div class="card-animal mb-3">
-              <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+            <% if animal.photo.key? %>
+               <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
+               <% else %>
+                <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+               <% end %>
               <div class="card-animal-infos">
                 <div>
                   <h2><%= animal.name %></h2>
@@ -24,5 +28,5 @@
         <% end %>
       <% end %>
   </div>
-      <%= link_to "Add a new animal", new_animal_path(@animal), class: "btn btn-ghost" %>
+
 </div>
