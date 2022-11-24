@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
 
     @booking.animal = @animal
     @booking.user = current_user
-
     if @booking.save
       redirect_to animal_bookings_path(@animal)
     else
@@ -23,14 +22,19 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
     @animal = Animal.find(params[:animal_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:animal_id])
+    @animal = Animal.find(params[:animal_id])
+    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    if @booking
+      redirect_to animal_bookings_path(@animal)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
