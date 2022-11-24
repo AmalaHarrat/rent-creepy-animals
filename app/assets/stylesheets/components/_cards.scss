@@ -94,3 +94,16 @@
     color: rgb(124, 127, 144)
   }
 }
+
+ .card-animal-user {
+   overflow: hidden;
+   background: white;
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ }
+
+ .card-animal-user > cl_image_tag {
+   height: 200px;
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
+ }
