@@ -33,6 +33,10 @@ class AnimalsController < ApplicationController
     redirect_to animals_path, status: :see_other
   end
 
+  def my_animals
+    # index, affiche tout ces animaux
+  end
+
   private
 
   def animal_params
