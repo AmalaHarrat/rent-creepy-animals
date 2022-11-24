@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "animals#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :animals, exept: [:index] do
-    resources :bookings, only: %i[index new create edit update]
+    resources :bookings, only: %i[index new create]
   end
-  resources :bookings, only: :destroy
+  resources :bookings, only: %i[destroy update edit]
   # Defines the root path route ("/")
   # root "articles#index"
 
