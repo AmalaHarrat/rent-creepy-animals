@@ -23,6 +23,16 @@
   margin: 0;
 }
 
+.card-animal a {
+  text-decoration: none;
+  color: #564C4D;
+  margin: 4px;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
+}
+
 .card-animal .card-animal-infos {
   padding: 16px;
   display: flex;
@@ -34,6 +44,10 @@
 .card-animal-infos a {
   text-decoration: none;
   color: #564C4D;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
 }
 
 
@@ -41,6 +55,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #564C4D;
+
+  &:hover {
+    color: rgb(124, 127, 144)
+  }
 }
 
 .zoom:hover {

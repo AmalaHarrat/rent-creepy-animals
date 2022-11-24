@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_animal, only: %i[edit update destroy]
 
   def index
@@ -17,12 +18,10 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
     @animal.user = current_user
     if @animal.save
-      redirect_to animal_path(@animal)
+      redirect_to my_animals_path
     else
-      render :new 
+      render :new, status: :unprocessable_entity
     end
-
-
   end
 
   def edit
@@ -31,12 +30,18 @@ class AnimalsController < ApplicationController
   def update
     @animal = Animal.find(params[:id])
     @animal.update(animal_params)
-    redirect_to animal_path(@animal)
+    redirect_to my_animals_path
   end
 
   def destroy
     @animal.destroy
-    redirect_to animals_path, status: :see_other
+    redirect_to my_animals_path, status: :see_other
+  end
+
+  def my_animals
+    # index
+    # indes des annimaux de mon user crée
+    @myanimals = current_user.animals
   end
 
   private

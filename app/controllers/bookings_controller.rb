@@ -44,6 +44,15 @@ class BookingsController < ApplicationController
     redirect_to animal_bookings_path(@animal), status: :see_other
   end
 
+  def my_bookings
+    # index
+    @mybookings = current_user.bookings
+  end
+
+  def booking_validation
+
+  end
+
   private
 
   def booking_params

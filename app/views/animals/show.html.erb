@@ -19,5 +19,8 @@
     </div>
   </div>
   <p><%= @animal.description %></p>
-<%= link_to "Book now", new_animal_booking_path(@animal), class: "btn btn-ghost" %>
+  <%= link_to "Book now", new_animal_booking_path(@animal), class: "btn btn-ghost" %>
+  <br>
+  <br>
+  <%= link_to " ⏎ Back", animals_path, class: "btn btn-ghost" %>
 </div>

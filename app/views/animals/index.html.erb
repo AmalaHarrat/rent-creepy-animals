@@ -8,18 +8,20 @@
 <div class="container">
   <div class="cards-animal">
       <% @animals.each do |animal| %>
-      <div class="zoom">
-        <div class="card-animal mb-3">
-          <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
-          <div class="card-animal-infos">
-            <div>
-              <h2><%= link_to animal.name, animal_path(animal)%></h2>
-              <p><%= animal.category %> | fearness level: <%= animal.fear %></p>
+        <%= link_to animal_path(animal) do %>
+          <div class="zoom">
+            <div class="card-animal mb-3">
+              <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+              <div class="card-animal-infos">
+                <div>
+                  <h2><%= animal.name %></h2>
+                  <p><%= animal.category %> | fearness level: <%= animal.fear %></p>
+                </div>
+                <h2 class="card-animal-pricing"><%= animal.price %> $</h2>
+              </div>
             </div>
-            <h2 class="card-animal-pricing"><%= animal.price %> $</h2>
           </div>
-        </div>
-      </div>
+        <% end %>
       <% end %>
   </div>
       <%= link_to "Add a new animal", new_animal_path(@animal), class: "btn btn-ghost" %>
