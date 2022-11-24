@@ -5,11 +5,11 @@
       <h1 class="text-center mb-5">Discover your favorite animal</h1>
         <div class="m-6 d-flex" style="height: 400px;">
           <img src="<%=image_path('unicorn.jpeg')%>" class="rounded-4"/>
-          <div class="photos">
+        </div>
+          <div class="photo d-flex">
             <%= image_tag("wedding.jpg") %>
             <%= image_tag("unicorn2.jpg") %>
           </div>
-        </div>
       <div class="d-flex justify-content-between">
         <h2><%= @animal.name %></h2>
         <h2 class="card-animal-pricing"><%= @animal.price %> $ </h2>
