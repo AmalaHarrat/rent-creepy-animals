@@ -10,7 +10,11 @@
       <% @myanimals.each do |animal| %>
       <div class="zoom">
         <div class="card-animal mb-3">
-          <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+          <% if animal.photo.key? %>
+            <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
+            <% else %>
+            <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+            <% end %>
           <%= link_to edit_animal_path(animal) do %>
             <i class="fa-solid fa-pen"></i>
           <% end %>

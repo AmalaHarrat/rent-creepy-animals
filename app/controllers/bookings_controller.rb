@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
     @booking.animal = @animal
     @booking.user = current_user
+
     if @booking.save
       redirect_to animal_bookings_path(@animal)
     else
@@ -22,16 +23,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @animal = Animal.find(params[:animal_id])
     @booking = Booking.find(params[:id])
   end
 
   def update
-    @animal = Animal.find(params[:animal_id])
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    # @booking.update(status: params[:status])
     if @booking
-      redirect_to animal_bookings_path(@animal)
+      redirect_to animal_bookings_path(@booking.animal_id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -46,7 +46,11 @@ class BookingsController < ApplicationController
 
   def my_bookings
     # index
-    @bookings = Booking.all
+    @mybookings = current_user.bookings
+  end
+
+  def booking_validation
+
   end
 
   private
