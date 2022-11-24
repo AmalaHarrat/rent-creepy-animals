@@ -1,0 +1,31 @@
+<h1 class ="text-center m-5">My Fabulous animals</h1>
+
+<div class="container">
+  <%= link_to "→ Add a fabulous animal !", new_animal_path%>
+  <%= link_to "→ Add a fabulous animal !", new_animal_path%>
+
+  <br>
+  <br>
+  <div class="cards-animal">
+      <% @myanimals.each do |animal| %>
+      <div class="zoom">
+        <div class="card-animal mb-3">
+          <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+          <%= link_to edit_animal_path(animal) do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+          <%= link_to animal_path(animal), data: {turbo_method: :delete, turbo_confirm: "You are about to delete this fabulous animal from your list, Are you sure?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end%>
+          <div class="card-animal-infos">
+            <div>
+              <h2><%= link_to animal.name, animal_path(animal)%></h2>
+              <p><%= animal.category %> | fearness level: <%= animal.fear %></p>
+            </div>
+            <h2 class="card-animal-pricing"><%= animal.price %> $</h2>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>

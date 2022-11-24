@@ -1,0 +1,22 @@
+<h1 class = "m-5 text-center">My booking requests</h1>
+<div class="container">
+  <div class="row">
+      <%@bookings.each do |booking|%>
+    <div class="col-6">
+        <div class="card-product">
+        <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+          <div class="card-product-infos">
+            <h2><%= booking.animal.name %></h2>
+            <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>
+            <%= link_to edit_animal_booking_path(booking,booking.animal_id) do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+            <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "You are about to delete this booking request, Are you sure?"} do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
+          </div>
+    </div>
+  <% end %>
+  </div>
+</div>

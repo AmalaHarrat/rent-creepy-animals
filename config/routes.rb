@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :bookings, only: :destroy
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get "my_animals", to: "animals#my_animals"
+  get "my_bookings", to: "bookings#my_bookings"
+  # patch "animals", to: "animals#my_update"
+
 end

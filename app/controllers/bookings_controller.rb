@@ -44,6 +44,11 @@ class BookingsController < ApplicationController
     redirect_to animal_bookings_path(@animal), status: :see_other
   end
 
+  def my_bookings
+    # index
+    @bookings = Booking.all
+  end
+
   private
 
   def booking_params
