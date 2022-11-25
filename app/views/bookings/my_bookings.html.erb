@@ -4,7 +4,11 @@
       <%@mybookings.each do |booking|%>
     <div class="col-6">
         <div class="card-product">
-        <img src="<%=image_path('default.jpeg')%>" alt="background">
+        <% if booking.animal.photo.key? %>
+            <%= cl_image_tag booking.animal.photo.key, height: 300, width: 400 %>
+            <% else %>
+              <img src="<%=image_path('default.jpeg')%>" alt="background">
+        <% end %>
           <div class="card-product-infos">
             <h2><%= booking.animal.name %></h2>
             <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>

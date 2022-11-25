@@ -15,6 +15,9 @@
             <%= link_to "Home", animals_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
+            <%= link_to "Bookings", animal_bookings_path(current_user.animals), class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "My Account", my_animals_path, class: "nav-link" %>
           </li>
           <%# <li class="nav-item active">
