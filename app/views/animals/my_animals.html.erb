@@ -1,20 +1,19 @@
-<h1 class ="text-center m-5">My Fabulous animals</h1>
+<h1 class ="text-center mt-5 mb-3">My Fabulous animals</h1>
 
 <div class="container">
-  <%= link_to "→ Add a fabulous animal !", new_animal_path%>
-  <%= link_to "→ My booking request!", my_bookings_path%>
-
+  <p><%= link_to "→ booking requests", my_bookings_path, class:"mb-3 text-uppercase"%></p>
   <br>
+  <%= link_to "Add a fabulous animal !", new_animal_path, class: "btn btn-ghost mb-3"%>
   <br>
   <div class="cards-animal">
       <% @myanimals.each do |animal| %>
       <div class="zoom">
         <div class="card-animal mb-3">
-         <% if animal.photo.key? %>
-               <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
-               <% else %>
-                <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
-               <% end %>
+          <% if animal.photo.key? %>
+            <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
+            <% else %>
+            <img src="<%=image_path('default.jpeg')%>" alt="background">
+            <% end %>
           <%= link_to edit_animal_path(animal) do %>
             <i class="fa-solid fa-pen"></i>
           <% end %>

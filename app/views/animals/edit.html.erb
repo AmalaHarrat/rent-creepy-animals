@@ -1,11 +1,10 @@
 <h1 class="text-center my-5 mx-3">Edit <%= @animal.name %></h1>
 
-
 <div class="container">
   <div class="row">
     <div class="col">
       <%= render "form", animal: @animal %>
-      <p class="text-end"><%= link_to "Back", my_animals_path, class: "btn btn-ghost" %></p>
+      <%= link_to "⏎ Back", my_animals_path %>
     </div>
   </div>
 </div>

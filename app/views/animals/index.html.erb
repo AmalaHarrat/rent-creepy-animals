@@ -12,16 +12,16 @@
           <div class="zoom">
             <div class="card-animal mb-3">
             <% if animal.photo.key? %>
-               <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
-               <% else %>
-                <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
-               <% end %>
+              <%= cl_image_tag animal.photo.key, height: 300, width: 400 %>
+              <% else %>
+                <img src="<%=image_path('default.jpeg')%>" alt="background">
+              <% end %>
               <div class="card-animal-infos">
                 <div>
                   <h2><%= animal.name %></h2>
                   <p><%= animal.category %> | fearness level: <%= animal.fear %></p>
                 </div>
-                <h2 class="card-animal-pricing"><%= animal.price %> $</h2>
+                <h2 class="card-animal-pricing"><%=animal.price%> $</h2>
               </div>
             </div>
           </div>
