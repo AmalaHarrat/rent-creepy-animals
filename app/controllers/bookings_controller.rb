@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   def booking_validation
     @booking = Booking.find(params[:id])
     @booking.update(status: params[:status].to_i)
-    redirect_to animal_bookings_path(@booking.animal_id)
+    # redirect_to animal_bookings_path(@booking.animal_id)
   end
 
   private
