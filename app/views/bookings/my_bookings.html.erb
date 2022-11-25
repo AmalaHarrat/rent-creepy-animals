@@ -8,8 +8,8 @@
           <div class="card-product-infos">
             <h2><%= booking.animal.name %></h2>
             <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>
-            <%= link_to "✔︎ Accept", booking_path(booking, status: "accept"), data: {turbo_method: :patch}, class: "btn btn-outline-success rounded-4 border-0"%>
-            <%= link_to "✘ Refuse", booking_path(booking, status: "refuse"), data: {turbo_method: :patch}, class: "btn btn-outline-danger rounded-4 border-0" %>
+            <%= link_to "✔︎ Accept", booking_validation_path(id: booking, status: 1), data: {turbo_method: :patch}, class: "btn btn-outline-success rounded-4 border-0"%>
+            <%= link_to "✘ Refuse", booking_validation_path(id: booking, status: 2), data: {turbo_method: :patch}, class: "btn btn-outline-danger rounded-4 border-0" %>
           </div>
           </div>
     </div>

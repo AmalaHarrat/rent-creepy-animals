@@ -29,12 +29,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    # @booking.update(status: params[:status])
-    if @booking
-      redirect_to animal_bookings_path(@booking.animal_id)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    # @booking.update(status: params[:status]
+    redirect_to animal_bookings_path(@booking.animal_id)
+    render :new, status: :unprocessable_entity
   end
 
   def destroy
@@ -50,12 +47,14 @@ class BookingsController < ApplicationController
   end
 
   def booking_validation
-
+    @booking = Booking.find(params[:id])
+    @booking.update(status: params[:status].to_i)
+    redirect_to animal_bookings_path(@booking.animal_id)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_date)
+    params.require(:booking).permit(:booking_date, :status)
   end
 end
