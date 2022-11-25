@@ -14,8 +14,9 @@
               <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "You are about to delete this movie from your list, Are you sure?"} do %>
                 <i class="fa-solid fa-trash"></i>
               <% end %>
+              <%= booking.status %>
             </div>
-          </div>
+        </div>
     </div>
   <% end %>
   </div>

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   get "my_animals", to: "animals#my_animals"
   get "my_bookings", to: "bookings#my_bookings"
+  patch "booking_validation", to: "bookings#booking_validation"
   # patch "animals", to: "animals#my_update"
 end
