@@ -4,7 +4,7 @@
       <%@bookings.each do |booking|%>
     <div class="col-6">
         <div class="card-product">
-        <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn">
+        <%# <img src="<%=image_path('unicorn.jpeg')%>" alt="unicorn"> %>
         <div class="card-product-infos">
             <h2><%= booking.animal.name %></h2>
             <p class= "mb-3"> <u>Reservation date:</u> <%= booking.booking_date%></p>
